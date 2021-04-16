@@ -23,3 +23,16 @@ C:\Users\andre\iCloudDrive\test4-15\obj\Debug\netcoreapp3.1\test4-15.csproj.Core
 C:\Users\andre\iCloudDrive\test4-15\obj\Debug\netcoreapp3.1\test4-15.dll
 C:\Users\andre\iCloudDrive\test4-15\obj\Debug\netcoreapp3.1\test4-15.pdb
 C:\Users\andre\iCloudDrive\test4-15\obj\Debug\netcoreapp3.1\test4-15.genruntimeconfig.cache
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\bin\Debug\netcoreapp3.1\test4-15.exe
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\bin\Debug\netcoreapp3.1\test4-15.deps.json
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\bin\Debug\netcoreapp3.1\test4-15.runtimeconfig.json
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\bin\Debug\netcoreapp3.1\test4-15.runtimeconfig.dev.json
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\bin\Debug\netcoreapp3.1\test4-15.dll
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\bin\Debug\netcoreapp3.1\test4-15.pdb
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\obj\Debug\netcoreapp3.1\test4-15.csprojAssemblyReference.cache
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\obj\Debug\netcoreapp3.1\test4-15.AssemblyInfoInputs.cache
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\obj\Debug\netcoreapp3.1\test4-15.AssemblyInfo.cs
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\obj\Debug\netcoreapp3.1\test4-15.csproj.CoreCompileInputs.cache
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\obj\Debug\netcoreapp3.1\test4-15.dll
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\obj\Debug\netcoreapp3.1\test4-15.pdb
+C:\Users\m2web\source\repos\NKU\abacon8Bchp11\test4-15\obj\Debug\netcoreapp3.1\test4-15.genruntimeconfig.cache
