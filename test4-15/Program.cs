@@ -8,27 +8,20 @@ class GreenvilleRevenue
         const int MAX_CONTESTANTS = 30;
         int num;
         int revenue = 0;
-
-        //HINT (2) - do this second - set QUIT and option variables
         //HINT: set QUIT variable to character datatype equal to 'Z' here for user input
-
+        const char QUIT = 'Z';
         //HINT: set space here as default value for the option variable value
-        char QUIT = 'Z';
         char option = ' ';
-        int number;
-        string entryString;
-        bool isvalid = false;
         Contestant[] contestants = new Contestant[MAX_CONTESTANTS];
         num = getContestantNumber(MIN_CONTESTANTS, MAX_CONTESTANTS);
+
         revenue = getContestantData(num, contestants, revenue);
         WriteLine("\n\nRevenue expected this year is {0}", revenue.ToString("C"));
 
-        //HINT (3) - do this third
         //HINT: check user input for stopping before calling getLists method with while loop here
         while (option != QUIT)
             option = getLists(num, contestants);
     }
-
 
     private static int getContestantNumber(int min, int max)
     {
@@ -53,25 +46,22 @@ class GreenvilleRevenue
                 //the number must be between 0 and 30. Use exception-handling techniques to ensure a valid value 
                 //and display the error message: Number must be between 0 and 30
 
-                //HINT (4) - do fourth - use a Try/Catch block. 
+                //HINT: use a Try/Catch block
                 //HINT: in the Try block use the condition below. If true throw an ArgumentException.
                 try
                 {
                     if (num < min || num > max)
-                        throw (new ArgumentException());
-
-
+                        throw new ArgumentException();
                 }
-                catch (ArgumentException e)
-
                 //HINT: in the Catch block use the code section below to write the exception message to the user
                 //and allow the user to correct the input
+                catch (ArgumentException e)
                 {
-                    //HINT: WriteLine(e.Message)
+                    //HINT: WriteLine(e.Message);
                     WriteLine(e.Message);
-                    WriteLine("Number must be between {0} and {1}", e.Message);
+                    WriteLine("Number must be between {0} and {1}", min, max);
                     num = max + 1;
-                    Write("Enter number of contestants >> ", e.Message);
+                    Write("Enter number of contestants >> ");
                     entryString = ReadLine();
                 }
             }
@@ -86,9 +76,8 @@ class GreenvilleRevenue
         string name;
         char talent;
         int age;
-        int pos;
-        //HINT (7) - do seventh
         //HINT: int pos; here
+        int pos;
         while (x < num)
         {
             Write("Enter contestant name >> ");
@@ -104,18 +93,19 @@ class GreenvilleRevenue
             //x is not a valid talent code. Assigned as Invalid.
             //where x was the invalid code entered into the console.
 
-            //HINT (8) - Use a Try/Catch block here
+            //HINT: Use a Try/Catch block here
             //HINT: In the Try block call a new validateCode method, passing in the talent variable and an Out Integer 
             //variable for the position
-            //HINT: the Catch block should be:
-            //WriteLine("{0} is not a valid talent code. Assigned as Invalid.", talent);
             try
             {
                 validateCode(talent, out pos);
             }
-            catch (ArgumentException e)
+            //HINT: the Catch block should be:
+            //WriteLine("{0} is not a valid talent code. Assigned as Invalid.", talent);
+            catch
             {
-                WriteLine("{0} is not a valid code. Assigned as Invalid.", talent);
+
+                WriteLine("{0} is not a valid talent code. Assigned as Invalid.", talent);
             }
 
             Write("       Enter contestant's age >> ");
@@ -134,14 +124,11 @@ class GreenvilleRevenue
         }
         return revenue;
     }
-
-    //HINT(9) - do ninth
     //HINT: change this method to return a char datatype 
     private static char getLists(int num, Contestant[] contestants)
     {
         int x;
         char QUIT = 'Z';
-        //HINT (1) - do this first
         //HINT: char option = ' ';
         char option = ' ';
         bool isValid;
@@ -173,25 +160,23 @@ class GreenvilleRevenue
                     //x is not a valid code
                     //Enter a talent type or Z to quit >>
 
-                    //HINT (10) do tenth - Use a Try/Catch block here
+                    //HINT: Use a Try/Catch block here
                     //HINT: In the Try block call a new validateCode method, passing in the talent variable and an Out Integer 
                     //variable for the position
-                    //HINT: the Catch block should be the WriteLine and Write statements below 
                     try
                     {
                         validateCode(option, out pos);
                         isValid = true;
                     }
-                    catch (ArgumentException e)
+                    //HINT: the Catch block should be the WriteLine and Write statements below 
+                    catch
                     {
-                        WriteLine(e.Message);
                         WriteLine("{0} is not a valid code", option);
                         Write("\nEnter a talent type or {0} to quit >> ", QUIT);
                         //HINT: set isValid to false
                         isValid = false;
                     }
                 }
-                //HINT(11) - do eleventh
                 //HINT: use if (isValid && option != QUIT) here.
                 if (isValid && option != QUIT)
                 {
@@ -207,42 +192,45 @@ class GreenvilleRevenue
                         }
                     }
                     if (!found)
-                        //HINT (12) do twelveth - add brackets: {
+                    //HINT: {
+                    {
                         WriteLine("No contestants had talent {0}", Contestant.talentStrings[pos]);
-                    isValid = false;
-                    Write("\nEnter a talent type or {0} to quit >> ", QUIT);
+                        isValid = false;
+                        Write("\nEnter a talent type or {0} to quit >> ", QUIT);
+                    }
+                    //HINT: }
                 }
-                //HINT: }
             }
         }
-        //HINT(13) do thirteenth - use return statement here to return the option variable;
+        //HINT: use return statement here to return the option variable;
         return option;
     }
-    public static void validateCode(char option, out int pos)
-    {
-        pos = 0;
-        Write("Enter talent code >> ");
-        char talent;
-        char.TryParse(ReadLine(), out talent);
-        try
-        {
-            validateCode(talent, out pos);
-        }
-        catch
-        {
-            WriteLine("{0} is not a valid code", talent);
-        }
-    }
-    //HINT(5) - do this fifth - Copy the code block at the bottom of this file and paste into 
-    //the Main method above to debug this new method. When done debugging remove the code
+
     //HINT: create a new method with the following method header:
     //public static void validateCode(char option, out int pos)
-    //HINT: use a for loop in which you check the option input parameter against the
-    //Contestant.talentCodes. When the talent is found, set the position out parameter
-    //to the index value of the matched talend code.
-    //HINT: if the talent code is invalid, throw an ArgumentException
-}
+    public static void validateCode(char option, out int pos)
+    {
+        bool isValid = false;
+        pos = 0;
+        //HINT: use a for loop in which you check the option input parameter against the
+        //Contestant.talentCodes. When the talent is found, set the position out parameter
+        //to the index value of the matched talend code.
+        for (int i = 0; i < Contestant.talentCodes.Length; i++)
+        {
+            if (option == Contestant.talentCodes[i])
+            {
+                isValid = true;
+                pos = i;
+            }
+        }
 
+        if (!isValid)
+            throw new ArgumentException();
+    }
+
+    //HINT: if the talent code is invalid, throw an ArgumentException
+
+}
 
 class Contestant
 {
@@ -323,17 +311,3 @@ class ChildContestant : Contestant
         return ("Child Contestant " + Name + " " + TalentCode + "   Fee " + Fee.ToString("C"));
     }
 }
-
-//use this code to debug the validateCode method
-// Write("Enter talent code >> ");
-// char talent;
-// int pos = 0;
-// char.TryParse(ReadLine(), out talent);
-// try
-// {
-//     validateCode(talent, out pos);
-// }
-// catch
-// {
-//     WriteLine("{0} is not a valid code", talent);
-// }
