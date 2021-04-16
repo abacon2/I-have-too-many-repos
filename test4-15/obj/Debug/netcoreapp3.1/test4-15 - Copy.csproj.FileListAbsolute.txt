@@ -1,0 +1,4 @@
+C:\Users\andre\iCloudDrive\test4-15\obj\Debug\netcoreapp3.1\test4-15 - Copy.csprojAssemblyReference.cache
+C:\Users\andre\iCloudDrive\test4-15\obj\Debug\netcoreapp3.1\test4-15 - Copy.AssemblyInfoInputs.cache
+C:\Users\andre\iCloudDrive\test4-15\obj\Debug\netcoreapp3.1\test4-15 - Copy.AssemblyInfo.cs
+C:\Users\andre\iCloudDrive\test4-15\obj\Debug\netcoreapp3.1\test4-15 - Copy.csproj.CoreCompileInputs.cache
